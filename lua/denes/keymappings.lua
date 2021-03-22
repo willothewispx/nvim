@@ -1,0 +1,47 @@
+-- astronauta.nvim
+local k = require('astronauta.keymap')
+local nnoremap = k.nnoremap
+local inoremap = k.inoremap
+
+-- ESC
+vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true})
+
+-- Copy/paste to/from clipboard
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-p>', '"+p', {noremap = true})
+
+-- Telescope
+local t = require('telescope.builtin')
+
+nnoremap{'<leader><space>', t.find_files, {silent = true}}
+nnoremap{'<leader>b', t.buffers, {silent = true}}
+nnoremap{'<leader>ps', t.live_grep, {silent = true}}
+vim.api.nvim_set_keymap('n', '<leader>pw', ':lua require("telescope.builtin").grep_string { search = vim.fn.expand("<cword>") }<CR>', {noremap = true, silent = true})
+nnoremap{'<leader>ph', t.help_tags, {silent = true}}
+
+-- Nvim-compe
+vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
+
+-- Snippets.nvim
+vim.cmd("inoremap <c-j> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>")
+-- inoremap{'<C-j>', require'snippets'.expand_or_advance(1), {}}
+-- inoremap{'<C-k>', require'snippets'.advance_snippet(-1), {}}
+
+
+-- Ultisnips
+vim.g.UltiSnipsExpandTrigger = '<C-CR>'
+vim.g.UltiSnipsJumpForwardTrigger = '<C-b>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<C-z>'
+
+-- Filetree
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+-- Kommentary
+vim.api.nvim_set_keymap('n', 'gcc', '<Plug>kommentary_line_default', {})
+vim.api.nvim_set_keymap('v', 'gcc', '<Plug>kommentary_visual_default', {})
+vim.api.nvim_set_keymap('n', 'gc', '<Plug>kommentary_motion_default', {})
+
+-- Undotree
+vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', {noremap = true})
+
