@@ -10,6 +10,7 @@
 
 -- Set leader key
 vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Load packer.nvim files
 require('denes.plugins')

@@ -38,13 +38,20 @@ local custom_attach = function(client)
   end
 end
 
--- Setup Lspistall
+-- Enable snippet support
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- Setup lspistall
 require'lspinstall'.setup() -- important
 
 local servers = require'lspinstall'.installed_servers()
 
 for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{ on_attach = custom_attach }
+  require'lspconfig'[server].setup{
+    on_attach = custom_attach,
+    capabilities = capabilities,
+  }
 end
 
 -- Lua
