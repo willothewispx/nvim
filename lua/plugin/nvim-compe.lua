@@ -22,8 +22,8 @@ require'compe'.setup {
     ultisnips = true;
     vsnip = true;
     spell = true;
-    tabnine = true;
-    treesitter = true;
+    -- tabnine = true;
+    treesitter = false;
     snippets_nvim = false;
   };
 }

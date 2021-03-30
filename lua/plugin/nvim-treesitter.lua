@@ -1,6 +1,16 @@
 require('nvim-treesitter.configs').setup{
   -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {'go', 'python', 'lua', 'typescript', 'bash', 'json', 'regex', 'toml'},
+  ensure_installed = {
+    'go',
+    'python',
+    'lua',
+    'typescript',
+    'latex',
+    'bash',
+    'json',
+    'regex',
+    'toml'
+  },
   highlight = {
     enable = true,
   },

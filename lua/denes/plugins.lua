@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
 
   -- LSP Autocomletion
   use 'hrsh7th/nvim-compe'
-  use {'tzachar/compe-tabnine'}
+  use 'tzachar/compe-tabnine'
 
   -- LSP install language server
   use 'kabouzeid/nvim-lspinstall'
