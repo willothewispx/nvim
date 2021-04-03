@@ -6,7 +6,7 @@
 -- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 
 -- Author: Denes Stolte
--- Link:   https://github.com/willothewispx/dotfiles
+-- Link:   https://gitlab.com/WillOtheWispX/nvim
 
 -- Set leader key
 vim.g.mapleader = ','

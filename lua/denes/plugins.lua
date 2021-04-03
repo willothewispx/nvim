@@ -62,6 +62,9 @@ return require('packer').startup(function(use)
   -- Indentlines
   use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
 
+  -- Colored parentheses
+  use 'p00f/nvim-ts-rainbow'
+
   -- Auto pairs
   use 'windwp/nvim-autopairs'
 

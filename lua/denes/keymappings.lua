@@ -4,12 +4,20 @@ local nnoremap = k.nnoremap
 
 -- ESC
 vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true})
-vim.api.nvim_set_keymap('t', '<C-Space>', '<C-\\><C-n>', {noremap = true})
+vim.api.nvim_set_keymap('v', '<C-c>', '<ESC>', {noremap = true})
+vim.api.nvim_set_keymap('t', '<TAB>', '<C-\\><C-n>', {noremap = true})
 
 -- Copy/paste to/from clipboard
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-p>', '"+p', {noremap = true})
+
+-- Movements
+vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true})
+vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', {noremap = true})
+
+-- Help
+vim.api.nvim_set_keymap('n', '<leader>ghw', ':h <C-R>=expand("<cword>")<CR><CR>', {noremap = true})
 
 -- Telescope
 local t = require('telescope.builtin')
@@ -34,19 +42,15 @@ nnoremap{'<leader>te', function() require('harpoon.term').gotoTerminal(2) end, {
 
 -- Nvim-compe
 vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap('i', '<C-e>', 'compe#close("<C-e>")', {noremap = true, silent = true, expr = true})
 
 -- Neogit
 nnoremap{'<leader>gs', require('neogit').open, {silent = true}}
 
--- Snippets.nvim
-vim.cmd("inoremap <c-j> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>")
--- inoremap{'<C-j>', require'snippets'.expand_or_advance(1), {}}
--- inoremap{'<C-k>', require'snippets'.advance_snippet(-1), {}}
-
 -- Ultisnips
 vim.g.UltiSnipsExpandTrigger = '<C-CR>'
-vim.g.UltiSnipsJumpForwardTrigger = '<C-b>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<C-z>'
+vim.g.UltiSnipsJumpForwardTrigger = '<TAB>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<S-TAB>'
 
 -- Filetree
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
@@ -59,9 +63,8 @@ nnoremap{'<leader>hp', require'hop'.hint_patterns, {}}
 
 -- Kommentary
 vim.api.nvim_set_keymap('n', 'gcc', '<Plug>kommentary_line_default', {})
-vim.api.nvim_set_keymap('v', 'gcc', '<Plug>kommentary_visual_default', {})
+vim.api.nvim_set_keymap('v', 'gcc', '<Plug>kommentary_visual_default<ESC>', {})
 vim.api.nvim_set_keymap('n', 'gc', '<Plug>kommentary_motion_default', {})
 
 -- Undotree
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', {noremap = true})
-

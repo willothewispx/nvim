@@ -5,11 +5,14 @@ require('nvim-treesitter.configs').setup{
     'python',
     'lua',
     'typescript',
+    'svelte',
     'latex',
     'bash',
-    'json',
+    'jsonc',
     'regex',
-    'toml'
+    'toml',
+    'html',
+    'css'
   },
   highlight = {
     enable = true,
