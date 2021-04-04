@@ -5,7 +5,7 @@ local nnoremap = k.nnoremap
 -- ESC
 vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true})
 vim.api.nvim_set_keymap('v', '<C-c>', '<ESC>', {noremap = true})
-vim.api.nvim_set_keymap('t', '<TAB>', '<C-\\><C-n>', {noremap = true})
+vim.api.nvim_set_keymap('t', '<C-SPACE>', '<C-\\><C-n>', {noremap = true})
 
 -- Copy/paste to/from clipboard
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
