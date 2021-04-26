@@ -10,3 +10,18 @@ set listchars+=precedes:❮
 set listchars+=nbsp:_
 " set listchars+=space:
 set showbreak=↳⋅
+
+" Show menu when using :find *.lua <TAB>
+set path+=**
+set wildmode=longest,full
+set wildmenu
+set wildignore+=**/node_modules/*
+set wildignore+=**/.git/*
+
+" Toggle quickfix
+function! QuickFixIsOpen()
+  let l:result = filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')
+  return !empty(l:result)
+endfunction
+nnoremap <C-q> :<C-R>=QuickFixIsOpen() ? "cclose" : "copen"<CR><CR>
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')

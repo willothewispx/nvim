@@ -27,7 +27,7 @@ opt('o', 'ignorecase', true)
 opt('o', 'smartcase', true)
 opt('o', 'hlsearch', false)
 
-opt('o', 'cursorline', true)
+opt('w', 'cursorline', true)
 
 opt('b', 'textwidth', 80)
 opt('w', 'colorcolumn', '+1')
@@ -41,8 +41,9 @@ opt('o', 'scrolloff', 10)
 
 opt('o', 'inccommand', 'split')
 
-local home = os.getenv('HOME')
+opt('b', 'swapfile', false)
 
+local home = os.getenv('HOME')
 opt('o', 'undodir', home .. "/.nvim/undodir")
 opt('b', 'undofile', true)
 
@@ -51,11 +52,3 @@ opt('o', 'mouse', 'n')
 opt('o', 'updatetime', 300)
 
 opt('o', 'completeopt', 'menuone,noselect')
-
--- Autoset spell
-vim.api.nvim_exec([[
-  augroup Spell
-    autocmd!
-    autocmd FileType latex,tex,md,markdown setlocal spell
-  augroup END
-]], false)

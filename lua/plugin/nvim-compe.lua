@@ -19,12 +19,10 @@ require'compe'.setup {
     tag = true;
     nvim_lsp = true;
     nvim_lua = true;
-    ultisnips = true;
     vsnip = true;
     spell = true;
     -- tabnine = true;
     treesitter = false;
-    snippets_nvim = false;
   };
 }
 

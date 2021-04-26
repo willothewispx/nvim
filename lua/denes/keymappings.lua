@@ -16,15 +16,26 @@ vim.api.nvim_set_keymap('n', '<C-p>', '"+p', {noremap = true})
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true})
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', {noremap = true})
 
+-- Quickfixlist
+vim.api.nvim_set_keymap('n', '<C-j>', ':cnext<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-k>', ':cprev<CR>', {noremap = true})
+
 -- Help
 vim.api.nvim_set_keymap('n', '<leader>ghw', ':h <C-R>=expand("<cword>")<CR><CR>', {noremap = true})
+
+-- Lspsaga
+nnoremap{'ga', require('lspsaga.codeaction').code_action, {silent = true}}
+nnoremap{'<leader>rn', require('lspsaga.rename').rename, {silent = true}}
+nnoremap{'ge', require('lspsaga.diagnostic').show_line_diagnostics, {silent = true}}
+nnoremap{'[e', require('lspsaga.diagnostic').lsp_jump_diagnostic_prev, {silent = true}}
+nnoremap{']e', require('lspsaga.diagnostic').lsp_jump_diagnostic_next, {silent = true}}
 
 -- Telescope
 local t = require('telescope.builtin')
 
 nnoremap{'<leader><space>', t.find_files, {silent = true}}
 nnoremap{'<leader>b', t.buffers, {silent = true}}
-nnoremap{'<leader>ps', t.live_grep, {silent = true}}
+nnoremap{'<leader>sp', t.live_grep, {silent = true}}
 vim.api.nvim_set_keymap('n', '<leader>pw', ':lua require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })<CR>', {noremap = true, silent = true})
 nnoremap{'<leader>ph', t.help_tags, {silent = true}}
 
@@ -41,16 +52,11 @@ nnoremap{'<leader>tu', function() require('harpoon.term').gotoTerminal(1) end, {
 nnoremap{'<leader>te', function() require('harpoon.term').gotoTerminal(2) end, {}}
 
 -- Nvim-compe
-vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
+-- vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', {noremap = true, silent = true, expr = true})
 vim.api.nvim_set_keymap('i', '<C-e>', 'compe#close("<C-e>")', {noremap = true, silent = true, expr = true})
 
 -- Neogit
 nnoremap{'<leader>gs', require('neogit').open, {silent = true}}
-
--- Ultisnips
-vim.g.UltiSnipsExpandTrigger = '<C-CR>'
-vim.g.UltiSnipsJumpForwardTrigger = '<TAB>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<S-TAB>'
 
 -- Filetree
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', {noremap = true, silent = true})

@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
   -- THEME gruvbox-material
   use 'sainnhe/gruvbox-material'
 
+  -- THEME Tokyo Night
+  use 'folke/tokyonight.nvim'
+
   -- Tree-sitter
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -43,6 +46,9 @@ return require('packer').startup(function(use)
 
   -- VSCode-like pictograms
   use 'onsails/lspkind-nvim'
+
+  -- Lsp UI
+  use 'glepnir/lspsaga.nvim'
 
   -- Filetree
   use 'kyazdani42/nvim-tree.lua'
@@ -83,8 +89,7 @@ return require('packer').startup(function(use)
   -- Snippets
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  use 'SirVer/ultisnips'
-  use 'honza/vim-snippets'
+  use 'rafamadriz/friendly-snippets'
 
   -- Startpage
   use 'mhinz/vim-startify'

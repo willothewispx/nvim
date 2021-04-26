@@ -1,7 +1,18 @@
-require('nvim-autopairs').setup()
-
-local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
+local remap = vim.api.nvim_set_keymap
+
+npairs.setup({
+    check_ts = true, -- treesitter support
+    ts_config = {
+        lua = {'string'}, -- it will not add pair on that treesitter node
+        javascript = {'template_string'},
+        java = false, -- don't check treesitter on java
+    }
+})
+
+require('nvim-treesitter.configs').setup {
+    autopairs = {enable = true}
+}
 
 -- skip it, if you use another global object
 _G.MUtils= {}

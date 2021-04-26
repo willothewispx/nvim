@@ -1,6 +1,7 @@
 require('lualine').setup{
 	options = {
-		theme = 'gruvbox_material',
+		-- theme = 'gruvbox_material',
+    theme = 'tokyonight',
 		section_separators = {'',''},
 		component_separators = {'',''},
 		icons_enabled = true,
