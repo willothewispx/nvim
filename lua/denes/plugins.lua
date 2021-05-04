@@ -80,6 +80,9 @@ return require('packer').startup(function(use)
   -- Git
   use 'TimUntersberger/neogit'
 
+  -- Gid diffs
+  use 'sindrets/diffview.nvim'
+
   -- Peek registers
   use 'gennaro-tedesco/nvim-peekup'
 
