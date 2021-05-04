@@ -1,5 +1,5 @@
 -- Recognize .tex files as latex files
-vim.g.tex_flavor =' latex'
+vim.g.tex_flavor = 'latex'
 
 -- Neovim remote
 vim.g.vimtex_compiler_progname = 'nvr'

@@ -21,7 +21,7 @@ require'compe'.setup {
     nvim_lua = true;
     vsnip = true;
     spell = true;
-    -- tabnine = true;
+    tabnine = true;
     treesitter = false;
   };
 }
