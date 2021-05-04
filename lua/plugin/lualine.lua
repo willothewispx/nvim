@@ -1,3 +1,13 @@
+local tokyonight = require('tokyonight.colors').setup()
+
+local c = {
+  diff = {
+    add = tokyonight.git.add,
+    change = tokyonight.git.change,
+    delete = tokyonight.git.delete
+  }
+}
+
 require('lualine').setup{
 	options = {
 		-- theme = 'gruvbox_material',
@@ -8,8 +18,8 @@ require('lualine').setup{
 	},
 	sections = {
 		lualine_a = {{'mode', upper = true}},
-		lualine_b = {'branch', {'diff', color_added = '#a9b665', color_modified = '#d3869b', color_removed = '#ea6962'}},
-		lualine_c = {{'filename', file_status = true}},
+		lualine_b = {'branch', {'diff', color_added = c.diff.add, color_modified = c.diff.change, color_removed = c.diff.delete}},
+		lualine_c = {{'filename', file_status = true}, {'diagnostics', sources = {'nvim_lsp'}}},
 		lualine_x = {'filetype'},
 		lualine_y = {'progress'},
 		lualine_z = {'location'},
