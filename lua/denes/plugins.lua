@@ -11,6 +11,12 @@ return require('packer').startup(function(use)
   -- THEME Tokyo Night
   use 'folke/tokyonight.nvim'
 
+  -- THEME material
+  use 'marko-cerovac/material.nvim'
+
+  -- THEME Moonlight
+  use 'shaunsingh/moonlight.nvim'
+
   -- Tree-sitter
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',

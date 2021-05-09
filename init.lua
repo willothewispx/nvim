@@ -23,3 +23,6 @@ require('denes.keymappings')
 
 -- Load lsp configuration
 require('denes.lsp')
+
+-- THEME
+require('denes.colors')
