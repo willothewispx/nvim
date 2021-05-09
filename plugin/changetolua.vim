@@ -18,9 +18,6 @@ set wildmenu
 set wildignore+=**/node_modules/*
 set wildignore+=**/.git/*
 
-nnoremap <leader>gd :DiffviewOpen<CR>
-nnoremap <leader>gc :DiffviewClose<CR>
-
 " Toggle quickfix
 function! QuickFixIsOpen()
   let l:result = filter(getwininfo(), 'v:val.quickfix && !v:val.loclist')

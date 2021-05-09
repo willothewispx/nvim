@@ -14,7 +14,7 @@ require('nvim-treesitter.configs').setup {
     autopairs = {enable = true}
 }
 
--- skip it, if you use another global object
+-- Mapping of <CR> with nvim-compe
 _G.MUtils= {}
 
 vim.g.completion_confirm_key = ""

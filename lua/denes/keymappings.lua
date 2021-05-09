@@ -6,6 +6,7 @@ local nnoremap = k.nnoremap
 vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true})
 vim.api.nvim_set_keymap('v', '<C-c>', '<ESC>', {noremap = true})
 vim.api.nvim_set_keymap('t', '<C-SPACE>', '<C-\\><C-n>', {noremap = true})
+vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', {noremap = true})
 
 -- Copy/paste to/from clipboard
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
@@ -57,6 +58,10 @@ vim.api.nvim_set_keymap('i', '<C-e>', 'compe#close("<C-e>")', {noremap = true, s
 
 -- Neogit
 nnoremap{'<leader>gs', require('neogit').open, {silent = true}}
+
+-- Diffviev
+vim.api.nvim_set_keymap('n', '<leader>gd', ':DiffviewOpen<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>gc', ':DiffviewClose<CR>', {noremap = true})
 
 -- Filetree
 vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
