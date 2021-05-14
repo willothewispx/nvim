@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap('v', '<C-c>', '<ESC>', {noremap = true})
 vim.api.nvim_set_keymap('t', '<C-SPACE>', '<C-\\><C-n>', {noremap = true})
 vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', {noremap = true})
 
+-- Disable Ex mode
+vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
+
 -- Copy/paste to/from clipboard
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
