@@ -32,6 +32,8 @@ return require('packer').startup(function(use)
   -- Devicons
   use 'kyazdani42/nvim-web-devicons'
 
+  use 'folke/todo-comments.nvim'
+
   -- Telescope
   use {'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'}}
