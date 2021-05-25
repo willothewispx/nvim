@@ -16,6 +16,9 @@ vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-p>', '"+p', {noremap = true})
 
+vim.api.nvim_set_keymap('n', '<leader>d', '"_d', {noremap = true})
+vim.api.nvim_set_keymap('v', '<leader>d', '"_d', {noremap = true})
+
 -- Movements
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true})
 vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', {noremap = true})
