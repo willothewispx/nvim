@@ -17,5 +17,5 @@ vim.g.startify_bookmarks = {
   {['i'] = home .. '/.config/nvim/init.lua'},
   {['z'] = home .. '/.zshrc'},
   {['k'] = home .. '/.config/kitty/kitty.conf'},
-  {['t'] = home .. '/dev/talk/talk.tex'},
+  {['c'] = home .. '/dev/cv/cv.tex'},
 }
